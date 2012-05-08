@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.projectbd.entity.Cliente;
 
+/**
+ * @author Paulo Antonio
+ * @author Renan Oliveira 
+ * **/
 public class ClienteDao extends GenericDaoImpl<Cliente> {
 
 	public ClienteDao() {

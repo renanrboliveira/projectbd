@@ -1,4 +1,4 @@
-package com.projectbd.dao;
+package test.com.projectbd.dao;
 
 import junit.framework.Assert;
 
