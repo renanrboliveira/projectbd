@@ -19,7 +19,7 @@ public class Cidade implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
-	@Column
+	@Column(nullable = false)
 	private String nome;
 	
 	@ManyToOne
