@@ -23,8 +23,9 @@ public class CategoriaDao extends GenericDaoImpl<Categoria>{
 
 	@Override
 	public Categoria findByName(String name) {
-		return (Categoria) getEntityManager().createQuery(
-				"SELECT cat FROM Categoria cat WHERE cat.nome=" + "'"+name+"'").getSingleResult();
+		return (Categoria) getEntityManager()
+				.createQuery("SELECT c FROM Categoria c  WHERE c.nome = ?1 ", Categoria.class)
+				.setParameter(1, name).getResultList().get(0);
 	}
 	
 }

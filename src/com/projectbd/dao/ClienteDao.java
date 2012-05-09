@@ -1,7 +1,6 @@
 package com.projectbd.dao;
 
 import java.util.List;
-
 import com.projectbd.entity.Cliente;
 
 /**
@@ -17,7 +16,7 @@ public class ClienteDao extends GenericDaoImpl<Cliente> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Cliente> findAll() {
-		return getEntityManager().createQuery("SELECT c FROM Cliente")
+		return getEntityManager().createQuery("SELECT c FROM Cliente c")
 				.getResultList();
 	}
 
@@ -25,7 +24,8 @@ public class ClienteDao extends GenericDaoImpl<Cliente> {
 	public Cliente findByName(String name) {
 
 		return (Cliente) getEntityManager().createQuery(
-				"SELECT c FROM Cliente WHERE c.nome=" + "'"+name+"'").getSingleResult();
+				"SELECT c FROM Cliente c  WHERE c.nome = ?1 ", Cliente.class)
+				.setParameter(1, name).getResultList().get(0);
 	}
 
 }

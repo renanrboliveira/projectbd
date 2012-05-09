@@ -7,8 +7,8 @@ import javax.persistence.EntityManager;
 import com.projectbd.util.HibernateUtil;
 
 /**
- * 
- * @author renanaoliveira
+ * @author Paulo Antonio
+ * @author Renan Oliveira
  */
 public abstract class GenericDaoImpl<T> {
 
@@ -59,7 +59,6 @@ public abstract class GenericDaoImpl<T> {
 	public abstract T findByName(String name);
 
 	public EntityManager getEntityManager() {
-
 		return entityManager;
 	}
 

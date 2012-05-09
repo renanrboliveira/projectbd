@@ -2,13 +2,9 @@ package com.projectbd.dao;
 
 
 /**
- * Renan Oliveira
+ * @author Renan Oliveira
  */
 public class RepositoryException extends Exception {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7164404239705038828L;
 	
 
