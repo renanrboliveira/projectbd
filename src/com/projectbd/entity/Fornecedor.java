@@ -23,7 +23,7 @@ public class Fornecedor implements Serializable {
 	@JoinColumn(name = "endereco_id")
 	private Endereco endereco;
 	
-	@Column
+	@Column(nullable = false)
 	private String nome;
 	
 	public Fornecedor(){

@@ -23,7 +23,7 @@ public class Estoque implements Serializable {
 	@JoinColumn(name = "filial_id")
 	private Filial filial;
 	
-	@Column
+	@Column(nullable = false)
 	private String nome;
 	
 	public Estoque(){

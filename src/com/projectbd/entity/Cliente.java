@@ -11,7 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 /**
- * Entity implementation class for Entity: Cliente
  *@author Paulo Antonio
  *@author Renan Oliveira
  */
@@ -25,25 +24,25 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
-	@Column
+	@Column(nullable = false)
 	private String nome;
 	
-	@Column
+	@Column(nullable = false)
 	private String telefone;
 	
-	@Column
+	@Column(nullable = false)
 	private String celular;
 	
-	@Column
+	@Column(nullable = false)
 	private String email;
 	
-	@Column
+	@Column(nullable = false)
 	private String sexo;
 	
-	@Column
+	@Column(nullable = false)
 	private String rg;
 	
-	@Column
+	@Column(nullable = false)
 	private String cnpjCpf;
 	
 	@OneToOne
