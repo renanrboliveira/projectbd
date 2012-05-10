@@ -41,9 +41,8 @@ public abstract class GenericDaoImpl<T> {
 	}
 
 	public void delete(T entity) {
-		
-		T entityToBeRemoved = entityManager.merge(entity);
-		entityManager.remove(entityToBeRemoved);
+	
+		entityManager.remove(entity);
 		
 	}
 
@@ -56,6 +55,7 @@ public abstract class GenericDaoImpl<T> {
 	}
 	
 	public abstract List<T> findAll();
+	
 	public abstract T findByName(String name);
 
 	public EntityManager getEntityManager() {
