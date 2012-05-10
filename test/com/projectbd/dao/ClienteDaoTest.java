@@ -4,6 +4,7 @@ import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Ignore;
 
 import com.projectbd.entity.Cliente;
 
@@ -31,7 +32,7 @@ public class ClienteDaoTest {
 		
 	}
 
-	@Test
+	@
 	public void alterarClienteTest() {
 		// TODO Auto-generated method stub
 
