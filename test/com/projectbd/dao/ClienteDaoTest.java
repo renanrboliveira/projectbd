@@ -59,7 +59,7 @@ public class ClienteDaoTest {
 		
 	}
 
-	@
+	@Test
 	public void alterarClienteTest() {
 		// TODO Auto-generated method stub
 
