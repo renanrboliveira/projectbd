@@ -1,6 +1,4 @@
-package test.com.projectbd.dao;
-
-import junit.framework.Assert;
+package com.projectbd.dao;
 
 import org.junit.Before;
 import org.junit.Test;

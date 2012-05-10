@@ -3,14 +3,14 @@
 	<persistence-unit name="projectBDPU" transaction-type="RESOURCE_LOCAL">
 		<class>com.projectbd.entity.Cliente</class>
 		<class>com.projectbd.entity.Produto</class>
-		<class>com.projectdb.entity.Cidade</class>
-		<class>com.projectdb.entity.Categoria</class>
-		<class>com.projectdb.entity.Endereco</class>
-		<class>com.projectdb.entity.Estado</class>
-		<class>com.projectdb.entity.Estoque</class>
-		<class>com.projectdb.entity.Filial</class>
-		<class>com.projectdb.entity.Fornecedor</class>
-		<class>com.projectdb.entity.Usuario</class>
+		<class>com.projectbd.entity.Cidade</class>
+		<class>com.projectbd.entity.Categoria</class>
+		<class>com.projectbd.entity.Endereco</class>
+		<class>com.projectbd.entity.Estado</class>
+		<class>com.projectbd.entity.Estoque</class>
+		<class>com.projectbd.entity.Filial</class>
+		<class>com.projectbd.entity.Fornecedor</class>
+		<class>com.projectbd.entity.Usuario</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
