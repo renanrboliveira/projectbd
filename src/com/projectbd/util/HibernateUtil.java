@@ -5,7 +5,7 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author renanaoliveira
+ * @author Paulo Antonio
  */
 public class HibernateUtil {
 
