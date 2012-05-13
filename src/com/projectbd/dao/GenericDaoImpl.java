@@ -50,7 +50,7 @@ public abstract class GenericDaoImpl<T> {
 		return entityManager.merge(entity);
 	}
 
-	public T find(int entityID) {
+	public T findId(int entityID) {
 		return entityManager.find(entityClass, entityID);
 	}
 	
