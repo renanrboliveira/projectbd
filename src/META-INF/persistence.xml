@@ -12,12 +12,23 @@
 		<class>com.projectbd.entity.Fornecedor</class>
 		<class>com.projectbd.entity.Usuario</class>
 		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+			<property name="hibernate.show_sql" value="true" /> 
+			<property name="hibernate.format_sql" value="true" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="80911157"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/projectbd" />
+			
+			<!--  
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql:projectbd"/>
 			<property name="javax.persistence.jdbc.user" value="desenv"/>
 			<property name="javax.persistence.jdbc.password" value="@@desenv@@"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+			-->
 		</properties>
 	</persistence-unit>
 </persistence>
