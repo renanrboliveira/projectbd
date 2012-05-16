@@ -40,17 +40,16 @@ public class ProdutoDaoTest {
 	}
 
 
-	@Test(expected = RepositoryException.class)
-	public void testFindAll() throws RepositoryException{
-		categoria.setId(1);
+	
+	
+	@Test
+	public void testUpdate()throws RepositoryException {
 		categoria.setNome("Refrigerantes");
 		daoCategoria.save(categoria);
 		
-		filial.setId(1);
 		filial.setNome("Todo Dia - Mamanguape");
 		daoFilial.save(filial);
 		
-		estoque.setId(1);
 		estoque.setNome("Est-Bebidas");
 		estoque.setFilial(filial);
 		daoEstoque.save(estoque);
@@ -58,127 +57,28 @@ public class ProdutoDaoTest {
 		produto.setNome("Coca Cola");
 		produto.setCategoria(categoria);
 		produto.setEstoque(estoque);
-		produto.setId(1);
 		produto.setObservacao("-------");
-		
-		/** Salva o produto "Coca Cola"**/
 		daoProduto.save(produto);
 		
+		produto.setNome("Coca Cola 3L");
 		
-		categoria.setId(1);
-		categoria.setNome("Refrigerantes");
-		daoCategoria.save(categoria);
+		daoProduto.update(produto);
 		
-		filial.setId(1);
-		filial.setNome("Todo Dia - Mamanguape");
-		daoFilial.save(filial);
-		
-		estoque.setId(1);
-		estoque.setNome("Est-Bebidas");
-		estoque.setFilial(filial);
-		daoEstoque.save(estoque);
-		
-		Produto pepsi = new Produto();
-		pepsi.setNome("Pepsi");
-		pepsi.setCategoria(categoria);
-		pepsi.setEstoque(estoque);
-
-		pepsi.setObservacao("-------");
-		
-		/** Salvou produto Pepsi**/
-		daoProduto.save(pepsi);
-		Assert.assertEquals(daoProduto.findAll().size(),2);
-		
-
-	}
-
-	@Test(expected = RepositoryException.class)
-	public void testFindByName() throws RepositoryException{
-		categoria.setId(1);
-		categoria.setNome("Refrigerantes");
-		daoCategoria.save(categoria);
-		
-		filial.setId(1);
-		filial.setNome("Todo Dia - Mamanguape");
-		daoFilial.save(filial);
-		
-		estoque.setId(1);
-		estoque.setNome("Est-Bebidas");
-		estoque.setFilial(filial);
-		daoEstoque.save(estoque);
-		
-		produto.setNome("Coca Cola");
-		produto.setCategoria(categoria);
-		produto.setEstoque(estoque);
-		produto.setId(1);
-		produto.setObservacao("-------");
-		
-		/** Salva o produto "Coca Cola"**/
-		daoProduto.save(produto);
-		
-		
-		categoria.setId(1);
-		categoria.setNome("Refrigerantes");
-		daoCategoria.save(categoria);
-		
-		filial.setId(1);
-		filial.setNome("Todo Dia - Mamanguape");
-		daoFilial.save(filial);
-		
-		estoque.setId(1);
-		estoque.setNome("Est-Bebidas");
-		estoque.setFilial(filial);
-		daoEstoque.save(estoque);
-		
-		Produto pepsi = new Produto();
-		pepsi.setNome("Pepsi");
-		pepsi.setCategoria(categoria);
-		pepsi.setEstoque(estoque);
-		
-		Assert.assertFalse(daoProduto.findByName("Pepsi").equals(produto));
-		
+		Assert.assertEquals("Coca Cola 3L",daoProduto.findId(1).getNome());	
 	}
 
 
-	@Test(expected = RepositoryException.class)
-	public void testSave() throws RepositoryException{
-		categoria.setId(1);
-		categoria.setNome("Refrigerantes");
-		daoCategoria.save(categoria);
-		
-		filial.setId(1);
-		filial.setNome("Todo Dia - Mamanguape");
-		daoFilial.save(filial);
-		
-		estoque.setId(1);
-		estoque.setNome("Est-Bebidas");
-		estoque.setFilial(filial);
-		daoEstoque.save(estoque);
-		
-		produto.setNome("Coca Cola");
-		produto.setCategoria(categoria);
-		produto.setEstoque(estoque);
-		produto.setId(1);
-		produto.setObservacao("-------");
-		
-		/** Salva o produto Coca Cola**/
-		daoProduto.save(produto);
-		
-		/** Testa se o produto Coca Cola foi salvo, procurando por ele pelo id**/
-		Assert.assertEquals(daoProduto.findId(1).equals(produto),true);
-	}
+	
 
-	@Test(expected = RepositoryException.class)
+
+	@Test
 	public void testDelete() throws RepositoryException{
-		categoria.setId(1);
 		categoria.setNome("Refrigerantes");
 		daoCategoria.save(categoria);
 		
-		filial.setId(1);
 		filial.setNome("Todo Dia - Mamanguape");
 		daoFilial.save(filial);
 		
-		estoque.setId(1);
 		estoque.setNome("Est-Bebidas");
 		estoque.setFilial(filial);
 		daoEstoque.save(estoque);
@@ -186,22 +86,18 @@ public class ProdutoDaoTest {
 		produto.setNome("Coca Cola");
 		produto.setCategoria(categoria);
 		produto.setEstoque(estoque);
-		produto.setId(1);
 		produto.setObservacao("-------");
 		
 		/** Salva o produto "Coca Cola"**/
 		daoProduto.save(produto);
 		
 		
-		categoria.setId(1);
 		categoria.setNome("Refrigerantes");
 		daoCategoria.save(categoria);
 		
-		filial.setId(1);
 		filial.setNome("Todo Dia - Mamanguape");
 		daoFilial.save(filial);
 		
-		estoque.setId(1);
 		estoque.setNome("Est-Bebidas");
 		estoque.setFilial(filial);
 		daoEstoque.save(estoque);
@@ -224,19 +120,15 @@ public class ProdutoDaoTest {
 		
 	}
 	
-	
 
-	@Test(expected = RepositoryException.class)
-	public void testUpdate()throws RepositoryException {
-		categoria.setId(1);
+	@Test
+	public void testSave() throws RepositoryException{
 		categoria.setNome("Refrigerantes");
 		daoCategoria.save(categoria);
 		
-		filial.setId(1);
 		filial.setNome("Todo Dia - Mamanguape");
 		daoFilial.save(filial);
 		
-		estoque.setId(1);
 		estoque.setNome("Est-Bebidas");
 		estoque.setFilial(filial);
 		daoEstoque.save(estoque);
@@ -244,28 +136,25 @@ public class ProdutoDaoTest {
 		produto.setNome("Coca Cola");
 		produto.setCategoria(categoria);
 		produto.setEstoque(estoque);
-		produto.setId(1);
 		produto.setObservacao("-------");
+		
+		/** Salva o produto Coca Cola**/
 		daoProduto.save(produto);
 		
-		produto.setNome("Coca Cola 3L");
-		
-		daoProduto.update(produto);
-		
-		Assert.assertEquals(daoProduto.findId(1).getNome(),"Coca Cola 3L");	
+		/** Testa se o produto Coca Cola foi salvo, procurando por ele pelo id**/
+		Assert.assertEquals(true,daoProduto.findId(1).equals(produto));
 	}
 
-	@Test(expected = RepositoryException.class)
+
+
+	@Ignore
 	public void testFindId() throws RepositoryException{
-		categoria.setId(1);
 		categoria.setNome("Refrigerantes");
 		daoCategoria.save(categoria);
 		
-		filial.setId(1);
 		filial.setNome("Todo Dia - Mamanguape");
 		daoFilial.save(filial);
 		
-		estoque.setId(1);
 		estoque.setNome("Est-Bebidas");
 		estoque.setFilial(filial);
 		daoEstoque.save(estoque);
@@ -273,22 +162,19 @@ public class ProdutoDaoTest {
 		produto.setNome("Coca Cola");
 		produto.setCategoria(categoria);
 		produto.setEstoque(estoque);
-		produto.setId(1);
 		produto.setObservacao("-------");
 		
 		/** Salva o produto "Coca Cola"**/
 		daoProduto.save(produto);
 		
 		
-		categoria.setId(1);
+		
 		categoria.setNome("Refrigerantes");
 		daoCategoria.save(categoria);
 		
-		filial.setId(1);
 		filial.setNome("Todo Dia - Mamanguape");
 		daoFilial.save(filial);
 		
-		estoque.setId(1);
 		estoque.setNome("Est-Bebidas");
 		estoque.setFilial(filial);
 		daoEstoque.save(estoque);
@@ -305,5 +191,91 @@ public class ProdutoDaoTest {
 		
 		Assert.assertTrue(daoProduto.findId(2).equals(pepsi));
 
+	}
+	
+	@Ignore
+	public void testFindAll() throws RepositoryException{
+		categoria.setNome("Refrigerantes");
+		daoCategoria.save(categoria);
+		
+		filial.setNome("Todo Dia - Mamanguape");
+		daoFilial.save(filial);
+		
+		estoque.setNome("Est-Bebidas");
+		estoque.setFilial(filial);
+		daoEstoque.save(estoque);
+		
+		produto.setNome("Coca Cola");
+		produto.setCategoria(categoria);
+		produto.setEstoque(estoque);
+		produto.setObservacao("-------");
+		
+		/** Salva o produto "Coca Cola"**/
+		daoProduto.save(produto);
+		
+		
+		categoria.setNome("Refrigerantes");
+		daoCategoria.save(categoria);
+		
+		filial.setNome("Todo Dia - Mamanguape");
+		daoFilial.save(filial);
+		
+		estoque.setNome("Est-Bebidas");
+		estoque.setFilial(filial);
+		daoEstoque.save(estoque);
+		
+		Produto pepsi = new Produto();
+		pepsi.setNome("Pepsi");
+		pepsi.setCategoria(categoria);
+		pepsi.setEstoque(estoque);
+
+		pepsi.setObservacao("-------");
+		
+		/** Salvou produto Pepsi**/
+		daoProduto.save(pepsi);
+		Assert.assertEquals(daoProduto.findAll().size(),2);
+		
+
+	}
+
+	@Ignore
+	public void testFindByName() throws RepositoryException{
+		
+		categoria.setNome("Refrigerantes");
+		daoCategoria.save(categoria);
+		
+		filial.setNome("Todo Dia - Mamanguape");
+		daoFilial.save(filial);
+		
+		estoque.setNome("Est-Bebidas");
+		estoque.setFilial(filial);
+		daoEstoque.save(estoque);
+		
+		produto.setNome("Coca Cola");
+		produto.setCategoria(categoria);
+		produto.setEstoque(estoque);
+		produto.setObservacao("-------");
+		
+		/** Salva o produto "Coca Cola"**/
+		daoProduto.save(produto);
+		
+		
+		categoria.setNome("Refrigerantes");
+		daoCategoria.save(categoria);
+		
+		filial.setNome("Todo Dia - Mamanguape");
+		daoFilial.save(filial);
+		
+		estoque.setNome("Est-Bebidas");
+		estoque.setFilial(filial);
+		daoEstoque.save(estoque);
+		
+		Produto pepsi = new Produto();
+		pepsi.setNome("Pepsi");
+		pepsi.setCategoria(categoria);
+		pepsi.setEstoque(estoque);
+		
+		Assert.assertFalse(daoProduto.findByName("Pepsi").equals(produto));
+		
 	}
 }
