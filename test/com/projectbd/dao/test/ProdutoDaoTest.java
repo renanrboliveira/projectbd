@@ -1,4 +1,8 @@
 package com.projectbd.dao.test;
+/** 
+ * @author Paulo Antonio
+ * @author Renan Oliveira
+ * **/
 
 import junit.framework.Assert;
 
