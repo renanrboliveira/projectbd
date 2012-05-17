@@ -14,7 +14,7 @@ public class ProdutoDao extends GenericDaoImpl<Produto>{
 	public List<Produto> findAll() {
 		return getEntityManager().createQuery("SELECT p FROM Produto p").getResultList();
 	}
-
+	/** Erro neste metodo**/
 	@Override
 	public Produto findByName(String name) {
 		return getEntityManager().createQuery("SELECT p FROM Produto p WHERE p.nome = ?1 ", Produto.class)
