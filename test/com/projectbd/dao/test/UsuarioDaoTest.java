@@ -2,6 +2,7 @@ package com.projectbd.dao.test;
 import junit.framework.Assert;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.projectbd.dao.RepositoryException;
@@ -14,28 +15,73 @@ public class UsuarioDaoTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		usuario = new Usuario();
 		dao = new UsuarioDao();
 	}
 
-	@Test(expected = RepositoryException.class)
-	public void salveTest() throws RepositoryException{
-		usuario = new Usuario();
+	@Ignore
+	public void testSave() throws RepositoryException{
 		usuario.setNome("Paulo");
 		usuario.setLogin("pauloneto");
 		usuario.setSenha("231074");
-		usuario.setId(1);
 		dao.save(usuario);
 		
-		dao = new UsuarioDao();
-		
 		Assert.assertEquals(dao.findByName("Paulo").getNome(),"Paulo");
-		
-		dao = new UsuarioDao();
-		
-		Usuario usuario = dao.findByName("Paulo");
-		dao.delete(usuario);
 	}
 	
+	@Ignore
+	public void testUpdate()throws RepositoryException{
+		usuario.setNome("Paulo");
+		usuario.setLogin("pauloneto");
+		usuario.setSenha("231074");
+		dao.save(usuario);
+		
+		usuario.setSenha("894523");
+		
+		dao.update(usuario);
+		
+		Assert.assertTrue(dao.findId(1).getSenha().equals("894523"));
+	}
 	
-
+	@Ignore
+	public void testDelete()throws RepositoryException{
+		usuario.setNome("Paulo");
+		usuario.setLogin("pauloneto");
+		usuario.setSenha("231074");
+		dao.save(usuario);
+		
+		dao.delete(usuario);
+		
+		Assert.assertTrue(dao.findAll().size() == 0);
+	}
+	
+	@Ignore
+	public void testFindAll()throws RepositoryException {
+		usuario.setNome("Paulo");
+		usuario.setLogin("pauloneto");
+		usuario.setSenha("231074");
+		dao.save(usuario);
+		
+		Assert.assertTrue(dao.findAll().size() == 1);
+	}
+	
+	@Ignore
+	public void testFindByName()throws RepositoryException{
+		usuario.setNome("Paulo");
+		usuario.setLogin("pauloneto");
+		usuario.setSenha("231074");
+		dao.save(usuario);
+		
+		Assert.assertTrue(dao.findByName("Paulo").equals(usuario));
+	}
+	
+	@Test
+	public void testFindId()throws RepositoryException{
+		usuario.setNome("Paulo");
+		usuario.setLogin("pauloneto");
+		usuario.setSenha("231074");
+		dao.save(usuario);
+		
+		Assert.assertTrue(dao.findId(1).getSenha().equals("231074"));
+	}
 }
