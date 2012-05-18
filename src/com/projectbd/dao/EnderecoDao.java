@@ -13,13 +13,13 @@ public class EnderecoDao extends GenericDaoImpl<Endereco> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Endereco> findAll() {
-		return getEntityManager().createQuery("SELECT end FROM Endereco end").getResultList();
+		return getEntityManager().createQuery("SELECT e FROM Endereco e").getResultList();
 	}
 
 	@Override
 	public Endereco findByName(String cep) {
 		return (Endereco) getEntityManager()
-				.createQuery("SELECT e FROM Endereco e WHERE e.cep = ?1 ", Endereco.class)
+				.createQuery("SELECT e FROM Endereco e WHERE e.cep = ? ", Endereco.class)
 				.setParameter(1, cep).getResultList().get(0);
 	}
 
