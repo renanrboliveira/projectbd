@@ -28,8 +28,7 @@ public abstract class GenericDaoImpl<T> {
 			entityManager.persist(entity);
 			entityManager.getTransaction().commit();
 			
-		} catch (Exception e) {
-			
+		} catch (Exception e) {			
 			entityManager.getTransaction().rollback();
 			throw new RepositoryException("Error save: "+e.getMessage());
 		}	
