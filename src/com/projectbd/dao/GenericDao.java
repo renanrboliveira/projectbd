@@ -2,6 +2,9 @@ package com.projectbd.dao;
 
 import java.util.List;
 
+/**
+ * @author Renan Oliveira 
+ * */
 
 public interface GenericDao<T> {
 	public void save(T entity)  throws RepositoryException;
