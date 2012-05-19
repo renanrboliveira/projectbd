@@ -10,7 +10,7 @@ import com.projectbd.util.HibernateUtil;
  * @author Paulo Antonio
  * @author Renan Oliveira
  */
-public abstract class GenericDaoImpl<T> {
+public abstract class GenericDaoImpl<T> implements GenericDao<T>{
 
 	private EntityManager entityManager;
 	private Class<T> entityClass;
