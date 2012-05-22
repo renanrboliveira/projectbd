@@ -1,4 +1,8 @@
 package com.projectbd.dao;
+/** 
+ * @author Paulo Antonio
+ * @author Renan Oliveira
+ * **/
 
 import java.util.List;
 
@@ -14,7 +18,7 @@ public class ProdutoDao extends GenericDaoImpl<Produto>{
 	public List<Produto> findAll() {
 		return getEntityManager().createQuery("SELECT p FROM Produto p").getResultList();
 	}
-
+	
 	@Override
 	public Produto findByName(String name) {
 		return getEntityManager().createQuery("SELECT p FROM Produto p WHERE p.nome = ?1 ", Produto.class)

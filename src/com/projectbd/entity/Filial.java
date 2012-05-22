@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Filial implements Serializable {
@@ -19,6 +21,10 @@ public class Filial implements Serializable {
 	
 	@Column(nullable = false)
 	private String nome;
+	
+	@OneToOne
+	@JoinColumn(name="estoque_id")
+	private Estoque estoque;
 	
 	public Filial(){
 		super();
@@ -43,8 +49,12 @@ public class Filial implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
-	
 
+	public Estoque getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Estoque estoque) {
+		this.estoque = estoque;
+	}
 }

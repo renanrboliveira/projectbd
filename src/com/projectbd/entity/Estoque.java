@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Estoque implements Serializable {
@@ -19,9 +17,6 @@ public class Estoque implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
-	@ManyToOne
-	@JoinColumn(name = "filial_id")
-	private Filial filial;
 	
 	@Column(nullable = false)
 	private String nome;
@@ -38,13 +33,6 @@ public class Estoque implements Serializable {
 		this.id = id;
 	}
 
-	public Filial getFilial() {
-		return filial;
-	}
-
-	public void setFilial(Filial filial) {
-		this.filial = filial;
-	}
 
 	public String getNome() {
 		return nome;

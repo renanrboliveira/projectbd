@@ -23,6 +23,10 @@ public class Fornecedor implements Serializable {
 	@JoinColumn(name = "endereco_id")
 	private Endereco endereco;
 	
+	@OneToOne
+	@JoinColumn(name="estoque_id")
+	private Estoque estoque;
+	
 	@Column(nullable = false)
 	private String nome;
 	
@@ -57,8 +61,12 @@ public class Fornecedor implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
-	
 
+	public Estoque getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Estoque estoque) {
+		this.estoque = estoque;
+	}
 }

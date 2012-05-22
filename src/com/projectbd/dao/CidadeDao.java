@@ -12,13 +12,12 @@ public class CidadeDao extends GenericDaoImpl<Cidade>{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Cidade> findAll() {
-		return getEntityManager().createQuery("SELECT cid FROM Cidade cid")
-				.getResultList();
+		return getEntityManager().createQuery("SELECT cid FROM Cidade cid").getResultList();
 	}
 
 	@Override
 	public Cidade findByName(String name) {
-		return (Cidade) getEntityManager().createQuery("SELECT c FROM Cidade c  WHERE c.nome = ?1 ", Cidade.class)
+		return (Cidade) getEntityManager().createQuery("SELECT c FROM Cidade c  WHERE c.nome = ? ", Cidade.class)
 				.setParameter(1, name).getResultList().get(0);
 	}
 
